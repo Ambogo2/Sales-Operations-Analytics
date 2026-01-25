@@ -10,7 +10,7 @@ I used this Dataset for my analysis and the data had 632 rows and 15 columns of 
 | DiscountPct   | Values >30%   | Capped at 30%   |
 | Incorect Data types|Most of the columns were not formatted correctly| Fixed the data types|
 | City, Salesperson, and Channel  | Missing Values|    |
-| UnitPrice|Negative values | Corrected to median of valid UnitPrices  |
+| UnitPrice|Negative values | Used find and replace tool to remove them |
 | DiscountPct | Values >30% | Capped at 30% |
 | RequiredDate | Some < OrderDate | Imputed as OrderDate + 3 days |
 
