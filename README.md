@@ -14,7 +14,7 @@ I used this Dataset for my analysis and the data had 632 rows and 15 columns of 
 | DiscountPct | Values >30% | Capped at 30% |
 | RequiredDate | Some < OrderDate | Imputed as OrderDate + 3 days |
 
-# Data Methodology
+# Data  Cleaning Methodology
 | Rule # | Column        | Cleaning Approach / Formula                              | Notes                              |
 |------:|---------------|------------------------------------------------------------|------------------------------------|
 | 1     | City          | =IF(TRIM(City)="","Unknown",City)                           | Handles missing text               |
@@ -22,5 +22,12 @@ I used this Dataset for my analysis and the data had 632 rows and 15 columns of 
 | 3     | LeadTimeDays  | =RequiredDate - OrderDate                                  | Derived field for service level proxy |
 | 4     | GrossRevenue  | =UnitPrice * Quantity * (1 - DiscountPct)                  | Calculated field                   |
 | 5     | PriceBand     | Quantile-based categorization                               | Low / Medium / High                |
+
+## Data Enrichment
+I Created calculated columns using the following formulas
+   • GrossRevenue = UnitPrice × Quantity × (1 − DiscountPct).
+   • CostOfGoods = UnitCost × Quantity.
+   • GrossProfit = GrossRevenue − CostOfGoods.
+   • MarginPct = IF(GrossRevenue=0, 0, GrossProfit / GrossRevenue).
 
 
