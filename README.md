@@ -25,9 +25,8 @@ I used this Dataset for my analysis and the data had 632 rows and 15 columns of 
 
 ## Data Enrichment
 I Created calculated columns using the following formulas
-   • GrossRevenue = UnitPrice × Quantity × (1 − DiscountPct).
-   • CostOfGoods = UnitCost × Quantity.
-   • GrossProfit = GrossRevenue − CostOfGoods.
-   • MarginPct = IF(GrossRevenue=0, 0, GrossProfit / GrossRevenue).
-
+- **GrossRevenue** = `UnitPrice × Quantity × (1 − DiscountPct)`
+- **CostOfGoods** = `UnitCost × Quantity`
+- **GrossProfit** = `GrossRevenue − CostOfGoods`
+- **MarginPct** = `IF(GrossRevenue = 0, 0, GrossProfit / GrossRevenue)`
 
