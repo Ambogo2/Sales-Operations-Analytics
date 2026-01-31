@@ -1,7 +1,7 @@
 # Sales-Operations-Analytics
 
 ## Dataset
-I used this Dataset for my analysis and the data had 632 rows and 15 columns of transactional sales data
+I used this [Dataset](https://github.com/Ambogo2/Sales-Operations-Analytics/blob/main/Dataset.xlsx) for my analysis and the data had 632 rows and 15 columns of transactional sales data
 
 ## Data Issues Found
 |Column   | Issue Found| Notes |
