@@ -23,8 +23,6 @@ I used this Dataset for my analysis and the data had 632 rows and 15 columns of 
 | 4     | GrossRevenue  | =UnitPrice * Quantity * (1 - DiscountPct)                  | Calculated field                   |
 | 5     | PriceBand     | Quantile-based categorization                               | Low / Medium / High                |
 
-## Dashboard Insights
-
 
 ## Data Enrichment
 I Created calculated columns using the following formulas
@@ -32,4 +30,18 @@ I Created calculated columns using the following formulas
 - **CostOfGoods** = `UnitCost × Quantity`
 - **GrossProfit** = `GrossRevenue − CostOfGoods`
 - **MarginPct** = `IF(GrossRevenue = 0, 0, GrossProfit / GrossRevenue)`
+- **LeadTimeDays** = `RequiredDate − OrderDate`
+- **Month** =`MMM-YYYY from OrderDate`
+- **Quarter** =`Q#-Year`
+- **PriceBand**=`SKU grouped into Low/Medium/High using revenue quantiles`
+
+## Assumptions Made
+
+- Discounts above 30% are likely data entry errors or policy violations
+- Missing Salesperson does not invalidate the order
+- Delivery lead time should not be negative
+- PriceBand classification reflects relative pricing, not cost
+
+## Dashboard Insights
+
 
