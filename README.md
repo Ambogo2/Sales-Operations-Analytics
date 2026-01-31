@@ -9,7 +9,7 @@ I used this Dataset for my analysis and the data had 632 rows and 15 columns of 
 | Duplicates | There was 1 duplicate   | Removed the duplicate based on OrderID  |
 | DiscountPct   | Values >30%   | Capped at 30%   |
 | Incorect Data types|Most of the columns were not formatted correctly| Fixed the data types|
-| City, Salesperson, and Channel  | Missing Values|    |
+| City, Salesperson, and Channel  | Missing Values| Filled using the most common city for that Country, Replaced with “Unknown” when missing for sales person and Assigned based on majority channel used by that Salesperson; otherwise “Retail” as default   |
 | UnitPrice|Negative values | Used find and replace tool to remove them |
 | DiscountPct | Values >30% | Capped at 30% |
 | RequiredDate | Some < OrderDate | Imputed as OrderDate + 3 days |
@@ -22,6 +22,9 @@ I used this Dataset for my analysis and the data had 632 rows and 15 columns of 
 | 3     | LeadTimeDays  | =RequiredDate - OrderDate                                  | Derived field for service level proxy |
 | 4     | GrossRevenue  | =UnitPrice * Quantity * (1 - DiscountPct)                  | Calculated field                   |
 | 5     | PriceBand     | Quantile-based categorization                               | Low / Medium / High                |
+
+## Dashboard Insights
+
 
 ## Data Enrichment
 I Created calculated columns using the following formulas
